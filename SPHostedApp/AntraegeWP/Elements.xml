@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ClientWebPart Name="Antraege" Title="Antraege" Description="AntraegeWP-Beschreibung" DefaultWidth="600" DefaultHeight="200">
+
+    <!-- Das Inhaltselement identifiziert die Position der Seite, die innerhalb des Clientwebparts gerendert wird.
+         Auf Eigenschaften wird in der Abfragezeichenfolge mithilfe des Musters _propertyName_ verwiesen.
+         Beispiel: Src="~appWebUrl/Pages/ClientWebPart1.aspx?Property1=_property1_" -->
+    <Content Type="html" Src="~appWebUrl/Pages/AntraegeWP.aspx?{StandardTokens}&amp;Property1=_prop1_&amp;Property2=_prop2_&amp;Property3=_prop3_&amp;Color=_color_" />
+
+    <!-- Definieren Sie die Eigenschaften im Eigenschaftenelement.
+         Geben Sie den Eigenschaftennamen im src-Attribut des obigen Inhaltselements an. -->
+    <Properties>
+      <Property
+          Name="prop1"
+          Type="string"
+          WebBrowsable="true"
+          WebDisplayName="First Property"
+          WebDescription="Description 1"
+          WebCategory="Custom Properties"
+          DefaultValue="String Property"
+          RequiresDesignerPermission="true" />
+      <Property
+          Name="prop2"
+          Type="boolean"
+          WebBrowsable="true"
+          WebDisplayName="Second Property"
+          WebDescription="Description 2"
+          WebCategory="Custom Properties"
+          DefaultValue="TRUE"
+          RequiresDesignerPermission="true" />
+      <Property
+          Name="prop3"
+          Type="int"
+          WebBrowsable="true"
+          WebDisplayName="Int Property"
+          WebDescription="Description 3"
+          WebCategory="Custom Properties"
+          DefaultValue="1"
+          RequiresDesignerPermission="true" />
+      <Property
+          Name="color"
+          Type="enum"
+          WebBrowsable="true"
+          WebDisplayName="Color Property"
+          WebDescription="Sets color for the CW"
+          WebCategory="Custom Properties"
+          DefaultValue="blue"
+          RequiresDesignerPermission="true" >
+        <EnumItems>
+          <EnumItem Value="blue" WebDisplayName="Blue" />
+          <EnumItem Value="red" WebDisplayName="Red" />
+          <EnumItem Value="yellow" WebDisplayName="Yellow" />
+        </EnumItems>
+      </Property>
+    </Properties>
+
+
+  </ClientWebPart>
+</Elements>
